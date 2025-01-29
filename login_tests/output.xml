@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.1.1 (Python 3.13.0 on win32)" generated="2025-01-10T09:44:53.607484" rpa="false" schemaversion="5">
+<suite id="s1" name="Valid Login" source="E:\Software Engineering\LAB7\login_tests\valid_login.robot">
+<test id="s1-t1" name="Valid Login" line="9">
+<kw name="Open Browser To Login Page" owner="resource">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-01-10T09:44:54.100830" level="INFO">${chrome_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x000001CAFE0CD400&gt;</msg>
+<var>${chrome_options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-01-10T09:44:54.100532" elapsed="0.000329"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-01-10T09:44:54.101116" level="INFO">${chrome_options.binary_location} = E:/Software Engineering/LAB7/ChromeDriverANDChromeTesting/chrome.exe</msg>
+<var>${chrome_options.binary_location}</var>
+<arg>${CHROME_BROWSER_PATH}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-01-10T09:44:54.100977" elapsed="0.000158"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-01-10T09:44:54.101728" level="INFO">${service} = &lt;selenium.webdriver.chrome.service.Service object at 0x000001CAFE0CD160&gt;</msg>
+<var>${service}</var>
+<arg>sys.modules["selenium.webdriver.chrome.service"].Service(executable_path=r"${CHROME_DRIVER_PATH}")</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-01-10T09:44:54.101219" elapsed="0.000536"/>
+</kw>
+<kw name="Create Webdriver" owner="SeleniumLibrary">
+<msg time="2025-01-10T09:44:54.101998" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<arg>Chrome</arg>
+<arg>options=${chrome_options}</arg>
+<arg>service=${service}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<status status="PASS" start="2025-01-10T09:44:54.101838" elapsed="5.140949"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-01-10T09:44:59.243080" level="INFO">Opening url 'http://localhost:7272/'</msg>
+<arg>${LOGIN URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-01-10T09:44:59.242947" elapsed="0.365184"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-01-10T09:44:59.608369" elapsed="0.261839"/>
+</kw>
+<kw name="Set Selenium Speed" owner="SeleniumLibrary">
+<arg>${DELAY}</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" start="2025-01-10T09:44:59.870375" elapsed="0.000222"/>
+</kw>
+<kw name="Login Page Should Be Open" owner="resource">
+<kw name="Title Should Be" owner="SeleniumLibrary">
+<msg time="2025-01-10T09:44:59.877116" level="INFO">Page title is 'Login Page'.</msg>
+<arg>Login Page</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<status status="PASS" start="2025-01-10T09:44:59.870925" elapsed="0.006280"/>
+</kw>
+<status status="PASS" start="2025-01-10T09:44:59.870745" elapsed="0.006558"/>
+</kw>
+<status status="PASS" start="2025-01-10T09:44:54.100062" elapsed="5.777302"/>
+</kw>
+<kw name="Input Username" owner="resource">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-01-10T09:44:59.878798" level="INFO">Typing text 'demo' into text field 'username_field'.</msg>
+<arg>username_field</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-10T09:44:59.878313" elapsed="0.081903"/>
+</kw>
+<arg>demo</arg>
+<status status="PASS" start="2025-01-10T09:44:59.877885" elapsed="0.082480"/>
+</kw>
+<kw name="Input Password" owner="resource">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-01-10T09:44:59.961492" level="INFO">Typing text 'mode' into text field 'password_field'.</msg>
+<arg>password_field</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-10T09:44:59.961073" elapsed="0.092959"/>
+</kw>
+<arg>mode</arg>
+<status status="PASS" start="2025-01-10T09:44:59.960679" elapsed="0.093446"/>
+</kw>
+<kw name="Submit Credentials" owner="resource">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-01-10T09:45:00.054795" level="INFO">Clicking button 'login_button'.</msg>
+<arg>login_button</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-10T09:45:00.054667" elapsed="0.168922"/>
+</kw>
+<status status="PASS" start="2025-01-10T09:45:00.054456" elapsed="0.169235"/>
+</kw>
+<kw name="Welcome Page Should Be Open" owner="resource">
+<kw name="Location Should Be" owner="SeleniumLibrary">
+<msg time="2025-01-10T09:45:00.229552" level="INFO">Current location is 'http://localhost:7272/welcome.html'.</msg>
+<arg>${WELCOME URL}</arg>
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<status status="PASS" start="2025-01-10T09:45:00.225836" elapsed="0.003801"/>
+</kw>
+<kw name="Title Should Be" owner="SeleniumLibrary">
+<msg time="2025-01-10T09:45:00.232706" level="INFO">Page title is 'Welcome Page'.</msg>
+<arg>Welcome Page</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<status status="PASS" start="2025-01-10T09:45:00.229801" elapsed="0.002974"/>
+</kw>
+<status status="PASS" start="2025-01-10T09:45:00.223997" elapsed="0.008846"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-01-10T09:45:00.233117" elapsed="2.915665"/>
+</kw>
+<status status="PASS" start="2025-01-10T09:44:54.099193" elapsed="9.049826"/>
+</test>
+<doc>A test suite with a single test for valid login.
+
+This test has a workflow that is created using keywords in
+the imported resource file.</doc>
+<status status="PASS" start="2025-01-10T09:44:53.608482" elapsed="9.541917"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Valid Login">Valid Login</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

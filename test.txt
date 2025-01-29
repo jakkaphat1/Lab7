@@ -1,0 +1,12 @@
+*** Settings ***
+Library SeleniumLibrary
+
+
+*** Variables ***
+${CHROME_BROWSER_PATH} ${CHROME_BROWSER_PATH} E:/Software Engineering/Chrome-driver&Chrome for testing/chrome-win64/chrome-win64/chrome.exe
+${CHROME_DRIVER_PATH} E:/Software Engineering/Chrome-driver&Chrome for testing/chromedriver-win64/chromedriver-win64/chromedriver.exe
+${URL} https://www.kku.ac.th
+
+*** Test Cases ***
+Valid Login
+    Open Browser    ${URL}    Chrome    executable_path=${CHROME_BROWSER_PATH}    driver_path=${CHROME_DRIVER_PATH}
